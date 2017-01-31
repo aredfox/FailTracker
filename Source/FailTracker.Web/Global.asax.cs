@@ -13,7 +13,15 @@ namespace FailTracker.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // DI with StructureMap
             DependencyResolver.SetResolver(new StructureMapDependencyResolver());
+            StructureMapObjectFactory.Container.Configure(cfg => {
+                cfg.Scan(scan => {
+                    scan.TheCallingAssembly();
+                    scan.WithDefaultConventions();
+                });
+            });
         }
     }
 }
