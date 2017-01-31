@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace FailTracker.Web
 {
@@ -25,6 +24,7 @@ namespace FailTracker.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/paper.min.css",
                       "~/Content/site.css"));
         }
     }
